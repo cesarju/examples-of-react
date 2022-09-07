@@ -1,5 +1,7 @@
 import { InputField } from "./components/InputField";
 import { useFormik, FormikProps } from "formik";
+// import { FieldArrayComponent } from "./components/FieldArrayComponent";
+import { InviteFriends } from "./components/FieldArrayComponent";
 import "./App.css";
 /*
   Form
@@ -35,20 +37,26 @@ export default function App() {
   });
 
   return (
-    <form className="App" onSubmit={formik.handleSubmit}>
-      <InputField
-        label="Name"
-        value={formik.values.name}
-        onChange={(val) => formik.setFieldValue("name", val)}
-      />
-      <br />
-      <InputField
-        label="Last Name"
-        value={formik.values.lastName}
-        onChange={(val) => formik.setFieldValue("lastName", val)}
-      />
-      <br />
-      <button type="submit">Enviar</button>
-    </form>
+    <div>
+      <h1>Hola mundo</h1>
+      <form className="App" onSubmit={formik.handleSubmit}>
+        <InputField
+          label="Name"
+          value={formik.values.name}
+          onChange={(val) => formik.setFieldValue("name", val)}
+        />
+        <br />
+        <InputField
+          label="Last Name"
+          value={formik.values.lastName}
+          onChange={(val) => formik.setFieldValue("lastName", val)}
+        />
+        <br />
+        <button type="submit">Enviar</button>
+      </form>
+      <InviteFriends />
+
+      {/* <FieldArrayComponent /> */}
+    </div>
   );
 }
